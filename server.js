@@ -13,6 +13,12 @@ const app = express();
 const jsonParser = bodyParser.json();
 app.use(cors());
 
+const port = 5000;
+
+app.get('/', (req, res) => res.send('Hello World!'));
+
+app.listen(process.env.PORT || port, () => console.log('BlackjackServer app listening at httpe://localhost:${port}));
+
 let database = null;
 let collection = null;
 async function connectDB(){
